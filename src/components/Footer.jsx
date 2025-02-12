@@ -115,8 +115,8 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
-            Copyright @ E-Comm | Developed By SECWEBXPERTS PVT. LTD.
-         </div>
+          Copyright @ E-Com | Developed By SECWEBXPERTS PVT. LTD.
+        </div>
       </footer>
     </div>
   );
