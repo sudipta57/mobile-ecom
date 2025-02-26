@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
-    
   };
   return (
     <>
@@ -43,13 +42,13 @@ const Header = () => {
         <div className="bg-[#1B6392] py-4 px-4 flex flex-col md:flex-row justify-between items-center border-t border-gray-500">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-           <Link to="/">
-           <img
-              src="/home/logo.png" // Replace with your logo path
-              alt="HelloShop Logo"
-              className="h-8"
-            />
-           </Link>
+            <Link to="/">
+              <img
+                src="/home/logo.png" // Replace with your logo path
+                alt="HelloShop Logo"
+                className="h-8"
+              />
+            </Link>
           </div>
 
           {/* Search Bar */}
@@ -77,7 +76,7 @@ const Header = () => {
             </a>
             {/* Toggle Button for Mobile */}
             <i
-              className={`fa-solid ${
+              className={`md:hidden fa-solid ${
                 isOpen ? "fa-xmark" : "fa-bars"
               } text-white hover:text-gray-300`}
               onClick={toggleNavbar}
@@ -89,45 +88,52 @@ const Header = () => {
         <div className="relative">
           {/* Bottom Section */}
           <div
-            className={`py-3 px-4 border-b bg-[#E4E7E9] border-gray-300 flex flex-col md:flex-row justify-between items-center text-sm ${
+            className={`py-3 px-4 border-b bg-[#FFFFFF] border-gray-300 flex flex-col md:flex-row justify-between items-center text-sm ${
               isOpen ? "block" : "hidden"
             } md:flex`}
           >
             {/* Left Links */}
             <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-6 items-center">
               <button className="bg-[#F2F4F5] p-3 font-medium hover:text-blue-700">
-                <Link to='shop-page'>All Category <i className="fa-solid fa-angle-down"></i></Link>
+                <Link to="shop-page">
+                  All Category <i className="fa-solid fa-angle-down"></i>
+                </Link>
               </button>
               <Link
                 to="/track-order"
-                className="text-[#5F6C72] text-[14px] font-[400] hover:text-blue-700"
+                className="text-[#5F6C72] text-[14px] font-[400] hover:text-blue-700 flex items-center space-x-1"
               >
-                <i className="fa-solid fa-location-dot"></i> Track Order
+                <img src="/home/location.png" alt="track" />
+                <p> Track Order</p>
               </Link>
               <Link
                 to="/compare-product"
-                className="text-[#5F6C72] text-[14px] font-[400] hover:text-blue-700"
+                className="text-[#5F6C72] text-[14px] font-[400] hover:text-blue-700 flex items-center space-x-1"
               >
-                <i className="fa-solid fa-code-compare"></i> Compare
+                <img src="/home/compare.png" alt="track" />
+                <p>Compare</p>
               </Link>
               <Link
                 to="/customer-support"
-                className="text-[#5F6C72] text-[14px] font-[400] hover:text-blue-700"
+                className="text-[#5F6C72] text-[14px] font-[400] hover:text-blue-700 flex items-center space-x-1"
               >
-                <i className="fa-solid fa-headphones"></i> Customer Support
+                <img src="/home/support.png" alt="track" />
+                <p> Customer Support</p>
               </Link>
               <Link
                 to="/need-support"
-                className="text-[#5F6C72] text-[14px] font-[400] hover:text-blue-700"
+                className="text-[#5F6C72] text-[14px] font-[400] hover:text-blue-700 flex items-center space-x-1"
               >
-                <i className="fa-solid fa-circle-info"></i> Need Help
+                <img src="/home/Info.png" alt="help" />
+                <p> Need Help</p>
               </Link>
             </div>
 
             {/* Right Contact */}
-            <div className="flex space-x-6 items-center mt-3 md:mt-0">
-              <i className="fa-solid fa-phone"></i>
-              <span className="text-[#5F6C72] text-[14px]">
+            <div className="flex space-x-3 items-center mt-3 md:mt-0">
+              <img src="/home/phone.png" alt="help" />
+
+              <span className="text[#191C1F] text-[18px] font-[400] font-poppins">
                 +1-202-555-0104
               </span>
             </div>

@@ -39,11 +39,11 @@ export default function NeedSupport() {
   ];
 
   return (
-    <div className="max-w-[1500px] mx-auto">
-      <div className="flex flex-col lg:flex-row lg:space-x-8 min-h-screen p-6">
+    <div className="max-w-[1500px] mx-auto py-20 md:py-0">
+      <div className="flex flex-col lg:flex-row lg:space-x-8 space-y-10 md:space-y-0 min-h-screen p-6">
         {/* Left Section: FAQs */}
         <div className="flex-1">
-          <h1 className="text-2xl font-bold text-gray-800 mb-6">
+          <h1 className="text-[40px] font-[600] font-poppins text-[#191C1F] mb-16">
             Frequently Asked Questions
           </h1>
           <div className="space-y-4">
@@ -54,22 +54,40 @@ export default function NeedSupport() {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className={`w-full text-left px-4 py-3 flex justify-between items-center ${
+                  className={`w-full text-left text-[23.68px] font-[500] font-publicSans text-[#191C1F] px-4 py-3 flex justify-between items-center ${
                     open === index
                       ? "bg-orange-500 text-white"
                       : " text-gray-800"
                   }`}
                 >
                   {faq.question}
-                  <span className="text-xl">{open === index ? "-" : "+"}</span>
+                  <span className="text-xl">
+                    {open === index ? (
+                      <i class="fa-solid fa-minus text-[#77878F]"></i>
+                    ) : (
+                      <i class="fa-solid fa-plus text-[#77878F]"></i>
+                    )}
+                  </span>
                 </button>
                 {open === index && (
-                  <div className="bg-white px-4 py-3 text-gray-700">
-                    <p>{faq.answer}</p>
+                  <div
+                    className="bg-white px-4 py-3"
+                    style={{
+                      boxShadow: " 0px 10.53px 52.63px 0px #0000001F",
+                    }}
+                  >
+                    <p className="text-[#475156] text-[18.42px] font-[400] font-publicSans">
+                      {faq.answer}
+                    </p>
                     {faq.points && (
-                      <ul className="list-disc pl-5 mt-3">
+                      <ul className="list-disc pl-5 mt-7">
                         {faq.points.map((point, idx) => (
-                          <li key={idx}>{point}</li>
+                          <li
+                            key={idx}
+                            className="text-[#475156] text-[18.42px] font-[400] font-publicSans my-2"
+                          >
+                            {point}
+                          </li>
                         ))}
                       </ul>
                     )}
@@ -81,11 +99,11 @@ export default function NeedSupport() {
         </div>
 
         {/* Right Section: Support Form */}
-        <div className="flex-1 max-w-sm bg-yellow-100 p-6 rounded-lg shadow-md">
-          <h2 className="text-lg font-bold text-gray-800 mb-4">
+        <div className="flex-1 max-w-sm bg-[#FBF4CE] p-6 rounded-lg shadow-md">
+          <h2 className="text-[#191C1F] text-[20.78px] font-[500] font-poppins mb-4">
             Don’t find your answer? Ask for support.
           </h2>
-          <p className="text-gray-600 mb-4">
+          <p className="text-[#475156] text-[18.7px] font-[400] font-poppins mb-4">
             Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed
             molestie accumsan dui, non iaculis primis in faucibus.
           </p>
@@ -113,9 +131,10 @@ export default function NeedSupport() {
             </div>
             <button
               type="submit"
-              className="w-[200px] bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition"
+              className="bg-[#FA8232] text-white px-4 py-2 rounded-[3px] hover:bg-orange-600 transition flex items-center justify-center space-x-2"
             >
-              SEND MESSAGE →
+              <p>SEND MESSAGE</p>
+              <img src="/home/right-arrow.png" alt="right-arrow" />
             </button>
           </form>
         </div>

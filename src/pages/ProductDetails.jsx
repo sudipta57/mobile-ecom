@@ -19,7 +19,7 @@ export default function ProductDetails() {
 
   const categories2 = [
     {
-      title: "FLASH SALE TODAY",
+      title: "RELATED PRODUCT",
       products: [
         {
           image: "/category/image1.png",
@@ -39,7 +39,7 @@ export default function ProductDetails() {
       ],
     },
     {
-      title: "BEST SELLERS",
+      title: "PRODUCT ACCESSORIES",
       products: [
         {
           image: "/category/image4.png",
@@ -59,7 +59,7 @@ export default function ProductDetails() {
       ],
     },
     {
-      title: "TOP RATED",
+      title: "APPLE PRODUCT",
       products: [
         {
           image: "/category/image7.png",
@@ -79,7 +79,7 @@ export default function ProductDetails() {
       ],
     },
     {
-      title: "NEW ARRIVAL",
+      title: "FEATURED PRODUCTS",
       products: [
         {
           image: "/category/image10.png",
@@ -113,391 +113,455 @@ export default function ProductDetails() {
       {/* Text Section */}
       <div className="w-2/3 pl-4">
         <h3 className="text-sm font-[400] text-[#191C1F]">{name}</h3>
-        <p className="mt-2 text-[#2DA5F3] font-[600] font-inter">  {"\u20B9"}{price}</p>
+        <p className="mt-2 text-[#2DA5F3] font-[600] font-inter">
+          {" "}
+          {"\u20B9"}
+          {price}
+        </p>
       </div>
     </div>
   );
 
   return (
-    <div class="max-w-[1400px] mx-auto">
-      <div className="flex flex-col md:flex-row items-start p-6 justify-between">
-        {/* Left Section: Image Viewer */}
-        <div>
-          {/* Large Image */}
-          <div className="border border-gray-200 rounded-lg overflow-hidden">
-            <img
-              src={selectedImage}
-              alt="Selected"
-              className="md:w-[500px] h-auto object-contain"
-            />
-          </div>
+    <div>
+      <div className="flex items-center bg-[#F2F4F5] p-5 ps-10 text-[#5F6C72] ">
+        {/* Home */}
+        <div className="flex justify-center font-poppins text-[14px] font-[400] ">
+          {/* Home */}
+          <p className="flex items-center">
+            <img src="/home.png" alt="Home Icon" className="mr-2" />
+            Home
+            <i class="fa-solid fa-chevron-right mx-2"></i>
+          </p>
 
-          {/* Thumbnail Slider */}
-          <div className="flex space-x-4 mt-4 overflow-x-auto">
-            {images.map((image, index) => (
-              <button
-                key={index}
-                onClick={() => setSelectedImage(image)}
-                className={`border ${
-                  selectedImage === image
-                    ? "border-blue-500"
-                    : "border-gray-200"
-                } rounded-lg overflow-hidden`}
-              >
-                <img
-                  src={image}
-                  alt={`Thumbnail ${index + 1}`}
-                  className="w-20 h-20 object-cover"
-                />
-              </button>
-            ))}
-          </div>
+          {/* Shop */}
+          <p className="flex items-center">
+            Shop
+            <i class="fa-solid fa-chevron-right mx-2"></i>
+          </p>
+
+          {/* Shop Grid */}
+          <p className="flex items-center">
+            Shop Grid
+            <i class="fa-solid fa-chevron-right mx-2"></i>
+          </p>
+          <p className="flex items-center">
+            Electronics Devices
+            <i class="fa-solid fa-chevron-right mx-2"></i>
+          </p>
+          {/* Electronics Devices */}
+          <span className="text-[#2DA5F3]">MacBook Pro</span>
         </div>
+      </div>
+      <div className="max-w-[1400px] mx-auto">
+        <div className="flex flex-col md:flex-row items-start p-6 justify-between pt-24 md:pt-6">
+          {/* Left Section: Image Viewer */}
+          <div>
+            {/* Large Image */}
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <img
+                src={selectedImage}
+                alt="Selected"
+                className="md:w-[500px] h-auto object-contain"
+              />
+            </div>
 
-        {/* Right Section: Product Details */}
-        <div className="w-full md:w-1/2 md:ml-6 mt-6 md:mt-0">
-          <div className="mb-6">
-            {/* Star Rating */}
-            <div className="flex items-center mb-2">
-              <div className="flex space-x-1 text-[#FA8232]">
-                {/* Star Icons */}
-                {Array(5)
-                  .fill(0)
-                  .map((_, i) => (
-                    <svg
-                      key={i}
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      className="w-5 h-5"
-                    >
-                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    </svg>
-                  ))}
+            {/* Thumbnail Slider */}
+            <div className="flex space-x-4 mt-4 overflow-x-auto">
+              {images.map((image, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedImage(image)}
+                  className={`border ${
+                    selectedImage === image
+                      ? "border-blue-500"
+                      : "border-gray-200"
+                  } rounded-lg overflow-hidden`}
+                >
+                  <img
+                    src={image}
+                    alt={`Thumbnail ${index + 1}`}
+                    className="w-20 h-20 object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Section: Product Details */}
+          <div className="w-full md:w-1/2 md:ml-6 mt-6 md:mt-0">
+            <div className="mb-6">
+              {/* Star Rating */}
+              <div className="flex items-center mb-2">
+                <div className="flex space-x-1 text-[#FA8232]">
+                  {/* Star Icons */}
+                  {Array(5)
+                    .fill(0)
+                    .map((_, i) => (
+                      <svg
+                        key={i}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        className="w-5 h-5"
+                      >
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                      </svg>
+                    ))}
+                </div>
+                <span className="text-[#5F6C72] font-[400] font-poppins ml-2 text-sm">
+                  <span className="text-[#191C1F] font-[600] font-poppins">
+                    4.7 Star Rating
+                  </span>{" "}
+                  (21,671 User feedback)
+                </span>
               </div>
-              <span className="text-[#5F6C72] font-[400] font-poppins ml-2 text-sm">
-               <span className="text-[#191C1F] font-[600] font-poppins">4.7 Star Rating</span> (21,671 User feedback)
+
+              {/* Product Title */}
+              <h1 className="text-2xl font-[400] text-[#191C1F] font-poppins mb-4 leading-tight">
+                2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM,
+                256GB SSD Storage) - Space Gray
+              </h1>
+
+              {/* Additional Details */}
+              <div className="space-y-4 text-sm ">
+                {/* SKU and Availability in Two Columns */}
+                <div className="grid md:grid-cols-2 gap-4">
+                  <p className="text-[#191C1F] font-[600] font-poppins">
+                    <span className="font-[600] font-poppins text-[#5F6C72]">
+                      SKU:
+                    </span>{" "}
+                    A264671
+                  </p>
+                  <p className="text-[#2DB224] font-[600] font-poppins">
+                    <span className="font-[600] font-poppins text-[#5F6C72]">
+                      Availability:
+                    </span>{" "}
+                    In Stock
+                  </p>
+                </div>
+
+                {/* Brand and Category in Two Columns */}
+                <div className="grid md:grid-cols-2 gap-4">
+                  <p className="text-[#191C1F] font-[600] font-poppins">
+                    <span className="font-[600] font-poppins text-[#5F6C72]">
+                      Brand:
+                    </span>{" "}
+                    Apple
+                  </p>
+                  <p className="text-[#191C1F] font-[600] font-poppins">
+                    <span className="font-[600] font-poppins text-[#5F6C72]">
+                      Category:
+                    </span>{" "}
+                    Electronics Devices
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-3xl text-[#2DA5F3] font-bold mb-4 flex items-center">
+              ₹1,47,098{" "}
+              <span className="line-through text-gray-500 text-xl ml-4">
+                ₹1,73,072
+              </span>
+              <span className="text-[#191C1F] bg-[#EFD33D] p-2 text-xl ml-4">
+                21% OFF
               </span>
             </div>
 
-            {/* Product Title */}
-            <h1 className="text-2xl font-[400] text-[#191C1F] font-poppins mb-4 leading-tight">
-              2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB
-              SSD Storage) - Space Gray
-            </h1>
+            {/* Color Options */}
+            {/* Flex Container for Two Columns */}
+            <div className="max-w-3xl ml-0">
+              <div className="flex flex-wrap -mx-4">
+                {/* Left Column */}
+                <div className="w-full md:w-1/2 px-4">
+                  {/* Color Options */}
+                  <div className="mb-6">
+                    <p className="font-semibold text-gray-700 mb-2">Color:</p>
+                    <div className="flex space-x-4">
+                      <button className="w-12 h-12 bg-gray-500 rounded-full border-4 border-orange-500 focus:outline-none"></button>
+                      <button className="w-12 h-12 bg-gray-200 rounded-full border border-gray-300 focus:outline-none"></button>
+                    </div>
+                  </div>
 
-            {/* Additional Details */}
-            <div className="space-y-4 text-sm ">
-              {/* SKU and Availability in Two Columns */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <p className="text-[#191C1F] font-[600] font-poppins">
-                  <span className="font-[600] font-poppins text-[#5F6C72]">SKU:</span> A264671
-                </p>
-                <p className="text-[#2DB224] font-[600] font-poppins">
-                  <span className="font-[600] font-poppins text-[#5F6C72]">
-                    Availability:
-                  </span>{" "}
-                  In Stock
-                </p>
-              </div>
-
-              {/* Brand and Category in Two Columns */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <p className="text-[#191C1F] font-[600] font-poppins">
-                  <span className="font-[600] font-poppins text-[#5F6C72]">Brand:</span> Apple
-                </p>
-                <p className="text-[#191C1F] font-[600] font-poppins">
-                  <span className="font-[600] font-poppins text-[#5F6C72]">Category:</span> Electronics
-                  Devices
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-3xl text-[#2DA5F3] font-bold mb-4 flex items-center">
-            ₹1,47,098{" "}
-            <span className="line-through text-gray-500 text-xl ml-4">
-              ₹1,73,072
-            </span>
-            <span className="text-[#191C1F] bg-[#EFD33D] p-2 text-xl ml-4">
-              21% OFF
-            </span>
-          </div>
-
-          {/* Color Options */}
-          {/* Flex Container for Two Columns */}
-          <div className="max-w-3xl ml-0">
-            <div className="flex flex-wrap -mx-4">
-              {/* Left Column */}
-              <div className="w-full md:w-1/2 px-4">
-                {/* Color Options */}
-                <div className="mb-6">
-                  <p className="font-semibold text-gray-700 mb-2">Color:</p>
-                  <div className="flex space-x-4">
-                    <button className="w-12 h-12 bg-gray-500 rounded-full border-4 border-orange-500 focus:outline-none"></button>
-                    <button className="w-12 h-12 bg-gray-200 rounded-full border border-gray-300 focus:outline-none"></button>
+                  {/* Memory Options */}
+                  <div className="mb-6">
+                    <label className="font-semibold text-gray-700 block mb-2">
+                      Memory:
+                    </label>
+                    <select className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700 focus:ring focus:ring-orange-300 focus:outline-none">
+                      <option>16GB unified memory</option>
+                    </select>
                   </div>
                 </div>
 
-                {/* Memory Options */}
-                <div className="mb-6">
-                  <label className="font-semibold text-gray-700 block mb-2">
-                    Memory:
-                  </label>
-                  <select className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700 focus:ring focus:ring-orange-300 focus:outline-none">
-                    <option>16GB unified memory</option>
-                  </select>
-                </div>
-              </div>
+                {/* Right Column */}
+                <div className="w-full md:w-1/2 px-4">
+                  {/* Size Options */}
+                  <div className="mb-6">
+                    <label className="font-semibold text-gray-700 block mb-2">
+                      Size:
+                    </label>
+                    <select className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700 focus:ring focus:ring-orange-300 focus:outline-none">
+                      <option>14-inch Liquid Retina XDR display</option>
+                    </select>
+                  </div>
 
-              {/* Right Column */}
-              <div className="w-full md:w-1/2 px-4">
-                {/* Size Options */}
-                <div className="mb-6">
-                  <label className="font-semibold text-gray-700 block mb-2">
-                    Size:
-                  </label>
-                  <select className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700 focus:ring focus:ring-orange-300 focus:outline-none">
-                    <option>14-inch Liquid Retina XDR display</option>
-                  </select>
-                </div>
-
-                {/* Storage Options */}
-                <div className="mb-6">
-                  <label className="font-semibold text-gray-700 block mb-2">
-                    Storage:
-                  </label>
-                  <select className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700 focus:ring focus:ring-orange-300 focus:outline-none">
-                    <option>1TB SSD Storage</option>
-                  </select>
+                  {/* Storage Options */}
+                  <div className="mb-6">
+                    <label className="font-semibold text-gray-700 block mb-2">
+                      Storage:
+                    </label>
+                    <select className="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-700 focus:ring focus:ring-orange-300 focus:outline-none">
+                      <option>1TB SSD Storage</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Quantity Selector and Buttons */}
-          <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 items-center space-x-4 mb-6">
-            <div className="flex items-center border border-gray-300 rounded">
-              <button className="px-3 py-2 text-gray-600">-</button>
-              <input
-                type="text"
-                value="1"
-                readOnly
-                className="w-12 text-center border-l border-r border-gray-300"
-              />
-              <button className="px-3 py-2 text-gray-600">+</button>
-            </div>
-            <div className="space-x-2">
-              <button className="px-6 py-2 bg-[#FA8232] text-white rounded hover:bg-orange-600">
-                <Link to="/add-Cart" className="flex items-center gap-2">
-                  Add to Cart
-                  <img src="/addCart.png" className="w-5 h-5" alt="Cart Icon" />
-                </Link>
-              </button>
-
-              <button className="px-6 py-2 border bg-white border-[#FA8232] text-[#FA8232] rounded ">
-                <Link to="/check-out">
-                Buy Now
-                </Link>
-              </button>
-            </div>
-          </div>
-
-          <div className="flex justify-between items-center mt-4">
-            {/* Left Section: Add to Wishlist/Compare */}
-            <div className="flex space-x-4">
-              <button className="text-[#475156] hover:underline flex items-center space-x-2">
-                <img
-                  src="/ProductDetails/wish.png"
-                  alt="Pinterest"
-                  className="w-4 h-4"
+            {/* Quantity Selector and Buttons */}
+            <div className="flex flex-col md:flex-row w-full space-y-3 md:space-y-0 items-center md:space-x-4 mb-6">
+              {/* Quantity Selector */}
+              <div className="flex items-center border border-gray-300 rounded">
+                <button className="px-3 py-2 text-gray-600">-</button>
+                <input
+                  type="text"
+                  value="1"
+                  readOnly
+                  className="w-12 text-center border-l border-r border-gray-300"
                 />
-                <span>Add to Wishlist</span>
-              </button>
-              <button className="text-[#475156] hover:underline flex items-center space-x-2">
-                <img
-                  src="/ProductDetails/compair.png"
-                  alt="Pinterest"
-                  className="w-4 h-4"
-                />
-                <span>Add to Compare</span>
-              </button>
+                <button className="px-3 py-2 text-gray-600">+</button>
+              </div>
+
+              {/* Buttons Container */}
+              <div className="flex space-x-2 w-full md:w-auto justify-center md:justify-start">
+                <button className="px-6 py-2 bg-[#FA8232] text-white rounded hover:bg-orange-600 flex-1 md:flex-none">
+                  <Link
+                    to="/add-Cart"
+                    className="flex items-center gap-2 uppercase justify-center"
+                  >
+                    Add to Cart
+                    <img
+                      src="/addCart.png"
+                      className="w-5 h-5"
+                      alt="Cart Icon"
+                    />
+                  </Link>
+                </button>
+
+                <button className="px-6 py-2 border bg-white border-[#FA8232] text-[#FA8232] rounded flex-1 md:flex-none">
+                  <Link to="/check-out" className="block text-center">
+                    Buy Now
+                  </Link>
+                </button>
+              </div>
             </div>
 
-            {/* Right Section: Share Product */}
-            <div className="flex items-center space-x-2">
-              <p className="text-gray-500">Share product:</p>
-              <button className="text-gray-500 hover:text-gray-700 flex items-center space-x-1">
-                <img
-                  src="/ProductDetails/Facebook.png"
-                  alt="Facebook"
-                  className="w-4 h-4"
-                />
-              </button>
-              <button className="text-gray-500 hover:text-gray-700 flex items-center space-x-1">
-                <img
-                  src="/ProductDetails/twiter.png"
-                  alt="Twitter"
-                  className="w-4 h-4"
-                />
-              </button>
-              <button className="text-gray-500 hover:text-gray-700 flex items-center space-x-1">
-                <img
-                  src="/ProductDetails/pint.png"
-                  alt="Pinterest"
-                  className="w-4 h-4"
-                />
-              </button>
+            <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 justify-between items-center mt-4">
+              {/* Left Section: Add to Wishlist/Compare */}
+              <div className="flex space-x-4">
+                <button className="text-[#475156] hover:underline flex items-center space-x-2">
+                  <img
+                    src="/ProductDetails/wish.png"
+                    alt="Pinterest"
+                    className="w-4 h-4"
+                  />
+                  <span>Add to Wishlist</span>
+                </button>
+                <button className="text-[#475156] hover:underline flex items-center space-x-2">
+                  <img
+                    src="/ProductDetails/compair.png"
+                    alt="Pinterest"
+                    className="w-4 h-4"
+                  />
+                  <span>Add to Compare</span>
+                </button>
+              </div>
+
+              {/* Right Section: Share Product */}
+              <div className="flex items-center space-x-2">
+                <p className="text-gray-500">Share product:</p>
+                <button className="text-gray-500 hover:text-gray-700 flex items-center space-x-1">
+                  <img
+                    src="/ProductDetails/Copy.png"
+                    alt="Facebook"
+                    className="w-4 h-4"
+                  />
+                </button>
+                <button className="text-gray-500 hover:text-gray-700 flex items-center space-x-1">
+                  <img
+                    src="/ProductDetails/Facebook.png"
+                    alt="Facebook"
+                    className="w-4 h-4"
+                  />
+                </button>
+                <button className="text-gray-500 hover:text-gray-700 flex items-center space-x-1">
+                  <img
+                    src="/ProductDetails/twiter.png"
+                    alt="Twitter"
+                    className="w-4 h-4"
+                  />
+                </button>
+                <button className="text-gray-500 hover:text-gray-700 flex items-center space-x-1">
+                  <img
+                    src="/ProductDetails/pint.png"
+                    alt="Pinterest"
+                    className="w-4 h-4"
+                  />
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="text-center border border-gray-300 text-gray-600 text-sm mt-4 p-4">
-            <p class="mb-4 font-medium text-left">
-              100% Guarantee Safe Checkout
-            </p>
-            <div class="flex justify-center space-x-4">
-              <img
-                src="/ProductDetails/checkout.png"
-                alt="Visa"
-                class="w-full h-auto  rounded-md"
-              />
+            <div class="text-center border border-[#E4E7E9] mt-4 p-4 rounded-[3.82px]">
+              <p class="mb-4 font-[400] text-left text-[18px] text-[#191C1F] font-poppins">
+                100% Guarantee Safe Checkout
+              </p>
+              <div class="flex justify-center space-x-4">
+                <img
+                  src="/ProductDetails/checkout.png"
+                  alt="Visa"
+                  class="w-full h-auto  rounded-md"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="p-6 bg-white border max-w-[1400px] mx-auto">
-        {/* Tabs */}
-        <div className="border-b w-full">
-          {" "}
-          {/* Ensure Full Width Border */}
-          <div className="flex justify-around max-w-[900px] text-[#5F6C72] text-[17px] font-[500] font-publicSans mx-auto w-full">
-            <button className="px-4 py-2 font-semibold  hover:text-[#191C1F]  w-full text-center border-b-4 border-transparent hover:border-[#FA8232]">
-              DESCRIPTION
-            </button>
-            <button className="px-2 py-2 font-semibold hover:text-[#191C1F] w-full text-center border-b-4 border-transparent hover:border-[#FA8232] whitespace-nowrap">
-              ADDITIONAL INFORMATION
-            </button>
+        <div className=" bg-white border max-w-[1400px] mx-auto">
+          {/* Tabs */}
+          <div className="border-b w-full ">
+            {" "}
+            {/* Ensure Full Width Border */}
+            <div className="flex justify-around md:max-w-[900px] text-[#5F6C72] text-[17px] font-[500] font-publicSans mx-auto w-full overflow-x-auto scrollbar-hide">
+              <button className="px-4 py-2 font-semibold  hover:text-[#191C1F]  w-full text-center border-b-4 border-transparent hover:border-[#FA8232]">
+                DESCRIPTION
+              </button>
+              <button className="px-2 py-2 font-semibold hover:text-[#191C1F] w-full text-center border-b-4 border-transparent hover:border-[#FA8232] whitespace-nowrap">
+                ADDITIONAL INFORMATION
+              </button>
 
-            <button className="px-4 py-2 font-semibold hover:text-[#191C1F] w-full text-center border-b-4 border-transparent hover:border-[#FA8232]">
-              SPECIFICATION
-            </button>
-            <button className="px-4 py-2 font-semibold  hover:text-[#191C1F] w-full text-center border-b-4 border-transparent hover:border-[#FA8232]">
-              REVIEW
-            </button>
-          </div>
-        </div>
-
-        {/* Content Section */}
-        <div className="md:flex md:space-x-6 mt-6 w-full">
-          {/* Description Section */}
-          <div className="md:w-1/2 mb-6  font-publicSans md:mb-0">
-            <h2 className="text-[20px] font-[600] text-[#191C1F] mb-4">
-              Description
-            </h2>
-            <p className=" text-[#5F6C72] font-[400] mb-4">
-              The most powerful MacBook Pro ever is here. With the blazing-fast
-              M1 Pro or M1 Max chip — the first Apple silicon designed for pros
-              — you get groundbreaking performance and amazing battery life. Add
-              to that a stunning Liquid Retina XDR display, the best camera and
-              audio ever in a Mac notebook, and all the ports you need.
-            </p>
-            <p className=" text-[#5F6C72] font-[400]">
-              Even the most ambitious projects are easily handled with up to 10
-              CPU cores, up to 16 GPU cores, a 16-core Neural Engine, and
-              dedicated encode and decode media engines that support H.264,
-              HEVC, and ProRes codecs.
-            </p>
+              <button className="px-4 py-2 font-semibold hover:text-[#191C1F] w-full text-center border-b-4 border-transparent hover:border-[#FA8232]">
+                SPECIFICATION
+              </button>
+              <button className="px-4 py-2 font-semibold  hover:text-[#191C1F] w-full text-center border-b-4 border-transparent hover:border-[#FA8232]">
+                REVIEW
+              </button>
+            </div>
           </div>
 
-          {/* Feature Section */}
-          <div className="md:w-1/4 text-[#191C1F] font-publicSans mb-6 md:mb-0">
-            <h2 className="text-[20px] font-[600] text-[#191C1F] font-publicSans  mb-4">
-              Feature
-            </h2>
-            <ul className="space-y-2 text-[#191C1F] font-[400] text-[17px] ">
-              <li className="flex items-center">
-                <span className="text-orange-500 mr-2">
-                  <img src="/ProductDetails/warranty.png" />
-                </span>
-                Free 1 Year Warranty
-              </li>
-              <li className="flex items-center">
-                <span className="text-orange-500 mr-2">
-                  <img src="/ProductDetails/delivery.png" />
-                </span>
-                Free Shipping & Fastest Delivery
-              </li>
-              <li className="flex items-center">
-                <span className="text-orange-500 mr-2">
-                  <img src="/ProductDetails/money-back.png" />
-                </span>
-                100% Money-back guarantee
-              </li>
-              <li className="flex items-center">
-                <span className="text-orange-500 mr-2">
-                  <img src="/ProductDetails/support.png" />
-                </span>
-                24/7 Customer Support
-              </li>
-              <li className="flex items-center">
-                <span className="text-orange-500 mr-2">
-                  <img src="/ProductDetails/payment.png" />
-                </span>
-                Secure Payment Method
-              </li>
-            </ul>
-          </div>
-
-          {/* Shipping Information Section */}
-          <div className="md:w-1/4">
-            <h2 className="text-[20px] font-[600] text-[#191C1F] font-publicSans mb-4">
-              Shipping Information
-            </h2>
-            <ul className="space-y-2 text-gray-700">
-              <li className="text-[#191C1F] font-[500]">
-                Courier:{" "}
-                <span className="text-[#5F6C72] font-[400]">
-                  2-4 days, free shipping
-                </span>
-              </li>
-              <li className="text-[#191C1F] font-[500]">
-                Local Shipping:{" "}
-                <span className="text-[#5F6C72] font-[400]">
-                  up to one week, $19.00
-                </span>
-              </li>
-              <li className="text-[#191C1F] font-[500]">
-                UPS Ground Shipping:{" "}
-                <span className="text-[#5F6C72] font-[400]">
-                  4-6 days, $29.00
-                </span>
-              </li>
-              <li className="text-[#191C1F] font-[500]">
-                Unishop Global Export:{" "}
-                <span className="text-[#5F6C72] font-[400]">
-                  3-4 days, $39.00
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* start Cateries2 section */}
-      <div className="container mx-auto p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories2.map((category) => (
-            <div key={category.title}>
-              <h2 className="text-lg font-bold text-gray-900 mb-4">
-                {category.title}
+          {/* Content Section */}
+          <div className="md:flex md:space-x-6 mt-6 w-full px-6">
+            {/* Description Section */}
+            <div className="md:w-1/2 mb-6  font-publicSans md:mb-0">
+              <h2 className="text-[20px] font-[600] text-[#191C1F] mb-4">
+                Description
               </h2>
-              <div className="grid gap-4">
-                {category.products.map((product, index) => (
-                  <ProductCard key={index} {...product} />
-                ))}
-              </div>
+              <p className=" text-[#5F6C72] font-[400] mb-4">
+                The most powerful MacBook Pro ever is here. With the
+                blazing-fast M1 Pro or M1 Max chip — the first Apple silicon
+                designed for pros — you get groundbreaking performance and
+                amazing battery life. Add to that a stunning Liquid Retina XDR
+                display, the best camera and audio ever in a Mac notebook, and
+                all the ports you need.
+              </p>
+              <p className=" text-[#5F6C72] font-[400]">
+                Even the most ambitious projects are easily handled with up to
+                10 CPU cores, up to 16 GPU cores, a 16-core Neural Engine, and
+                dedicated encode and decode media engines that support H.264,
+                HEVC, and ProRes codecs.
+              </p>
             </div>
-          ))}
+
+            {/* Feature Section */}
+            <div className="md:w-1/4 text-[#191C1F] font-publicSans mb-6 md:mb-0 border-r">
+              <h2 className="text-[20px] font-[600] text-[#191C1F] font-publicSans  mb-4">
+                Feature
+              </h2>
+              <ul className="space-y-2 text-[#191C1F] font-[400] text-[17px] ">
+                <li className="flex items-center">
+                  <span className="text-orange-500 mr-2">
+                    <img src="/ProductDetails/warranty.png" />
+                  </span>
+                  Free 1 Year Warranty
+                </li>
+                <li className="flex items-center">
+                  <span className="text-orange-500 mr-2">
+                    <img src="/ProductDetails/delivery.png" />
+                  </span>
+                  Free Shipping & Fastest Delivery
+                </li>
+                <li className="flex items-center">
+                  <span className="text-orange-500 mr-2">
+                    <img src="/ProductDetails/money-back.png" />
+                  </span>
+                  100% Money-back guarantee
+                </li>
+                <li className="flex items-center">
+                  <span className="text-orange-500 mr-2">
+                    <img src="/ProductDetails/support.png" />
+                  </span>
+                  24/7 Customer Support
+                </li>
+                <li className="flex items-center">
+                  <span className="text-orange-500 mr-2">
+                    <img src="/ProductDetails/payment.png" />
+                  </span>
+                  Secure Payment Method
+                </li>
+              </ul>
+            </div>
+
+            {/* Shipping Information Section */}
+            <div className="md:w-1/4">
+              <h2 className="text-[20px] font-[600] text-[#191C1F] font-publicSans mb-4">
+                Shipping Information
+              </h2>
+              <ul className="space-y-2 text-gray-700">
+                <li className="text-[#191C1F] font-[500]">
+                  Courier:{" "}
+                  <span className="text-[#5F6C72] font-[400]">
+                    2-4 days, free shipping
+                  </span>
+                </li>
+                <li className="text-[#191C1F] font-[500]">
+                  Local Shipping:{" "}
+                  <span className="text-[#5F6C72] font-[400]">
+                    up to one week, $19.00
+                  </span>
+                </li>
+                <li className="text-[#191C1F] font-[500]">
+                  UPS Ground Shipping:{" "}
+                  <span className="text-[#5F6C72] font-[400]">
+                    4-6 days, $29.00
+                  </span>
+                </li>
+                <li className="text-[#191C1F] font-[500]">
+                  Unishop Global Export:{" "}
+                  <span className="text-[#5F6C72] font-[400]">
+                    3-4 days, $39.00
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* start Cateries2 section */}
+        <div className="container mx-auto p-6 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {categories2.map((category) => (
+              <div key={category.title}>
+                <h2 className="text-[20px] font-[600] text-[#191C1F] font-poppins mb-4">
+                  {category.title}
+                </h2>
+                <div className="grid gap-4">
+                  {category.products.map((product, index) => (
+                    <ProductCard key={index} {...product} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

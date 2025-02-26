@@ -48,11 +48,18 @@ const Compare = () => {
 
   return (
     <>
-      <div className="flex space-x-4 bg-[#F2F4F5] p-5 ps-10 text-[#5F6C72] text-[14px] font-[400]">
-        <p>
-          home <i className="fa-solid fa-greater-than"></i>{" "}
-        </p>
-        <span className="text-[#2DA5F3]">Compare</span>
+      <div className="flex items-center bg-[#F2F4F5] p-5 ps-10 text-[#5F6C72] ">
+        {/* Home */}
+        <div className="flex justify-center font-poppins text-[14px] font-[400] ">
+          {/* Home */}
+          <p className="flex items-center">
+            <img src="/home.png" alt="Home Icon" className="mr-2" />
+            Home
+            <i class="fa-solid fa-chevron-right mx-2"></i>
+          </p>
+          {/* Electronics Devices */}
+          <span className="text-[#2DA5F3]">Compare</span>
+        </div>
       </div>
 
       <div className="my-10 max-w-[1500px] mx-auto p-6 shadow-md">
@@ -85,28 +92,36 @@ const Compare = () => {
               {products.map((product) => (
                 <div
                   key={product.id}
-                  className="border border-gray-200 bg-white shadow-md p-4"
+                  className="border border-gray-200 bg-white shadow-md p-4 "
                 >
+                  <div className="flex justify-center items-center">
+                    <img
+                      src="/compare/x.png"
+                      alt="x"
+                      className="cursor-pointer"
+                    />
+                  </div>
                   {/* Product Image */}
                   <div className="flex justify-center mb-4">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-32 h-32 object-contain"
+                      className="object-contain"
                     />
                   </div>
 
                   {/* Product Name */}
-                  <h2 className="text-sm font-medium text-gray-800 text-center mb-4">
+                  <h2 className="text-[20px] font-[400] text-[#191C1F] font-poppins mb-4">
                     {product.name}
                   </h2>
 
                   {/* Add to Cart and Wishlist */}
                   <div className="flex justify-center items-center space-x-2 mb-6">
-                    <button className="bg-[#FA8232] text-white px-4 py-2 rounded-full hover:bg-orange-600 transition">
-                      ADD TO CART <i className="fa-solid fa-cart-plus ml-2"></i>
+                    <button className="bg-[#FA8232] flex items-center space-x-2 text-white px-4 py-2 hover:bg-orange-600 transition">
+                      <p> ADD TO CART </p>
+                      <img src="/compare/cart-icon.png" alt="cart" />
                     </button>
-                    <button className="px-4 py-2 border border-[#FFE7D6] text-[#FA8232] rounded-full hover:bg-[#FFE7D6] transition">
+                    <button className="px-4 py-2 border border-[#FFE7D6] text-[#FA8232] hover:bg-[#FFE7D6] transition">
                       <i className="fa-regular fa-heart"></i>
                     </button>
                   </div>
@@ -114,7 +129,7 @@ const Compare = () => {
                   {/* Product Details */}
                   <div className="space-y-2 text-sm">
                     {/* Ratings */}
-                    <div className="flex items-center space-x-2 bg-[#F2F4F5] p-3">
+                    <div className="flex items-center space-x-1 bg-[#F2F4F5] p-3">
                       {Array(product.rating)
                         .fill()
                         .map((_, i) => (
@@ -129,15 +144,21 @@ const Compare = () => {
                     </div>
 
                     <p className="p-3">
-                      <span className="text-blue-600 font-semibold">
+                      <span className="text-[#2DA5F3] text-[22px] font-semibold">
                         {product.price}
                       </span>
                     </p>
-                    <p className="bg-[#F2F4F5] p-3">{product.soldBy}</p>
-                    <p className="p-3">{product.brand}</p>
-                    <p className="bg-[#F2F4F5] p-3">{product.model}</p>
+                    <p className="bg-[#F2F4F5] p-3 text-[18px] font-[400] font-poppins">
+                      {product.soldBy}
+                    </p>
+                    <p className="p-3 text-[18px] font-[400] font-poppins">
+                      {product.brand}
+                    </p>
+                    <p className="bg-[#F2F4F5] p-3 text-[18px] font-[400] font-poppins">
+                      {product.model}
+                    </p>
                     <p
-                      className={`font-semibold p-3 ${
+                      className={`font-semibold p-3 text-[18px] font-poppins ${
                         product.stock === "IN STOCK"
                           ? "text-green-600"
                           : "text-red-600"
@@ -145,8 +166,12 @@ const Compare = () => {
                     >
                       {product.stock}
                     </p>
-                    <p className="bg-[#F2F4F5] p-3">Size: {product.size}</p>
-                    <p className="p-3">{product.weight}</p>
+                    <p className="bg-[#F2F4F5] p-3 text-[18px] font-[400] font-poppins">
+                      Size: {product.size}
+                    </p>
+                    <p className="p-3 text-[18px] font-[400] font-poppins">
+                      {product.weight}
+                    </p>
                   </div>
                 </div>
               ))}

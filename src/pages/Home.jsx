@@ -283,7 +283,7 @@ const Home = () => {
   ];
 
   const ProductCard = ({ image, name, price }) => (
-    <div className="flex items-center p-4 bg-white border">
+    <div className="flex items-center bg-white border">
       {/* Image Section */}
       <div className="w-1/3">
         <img
@@ -294,8 +294,10 @@ const Home = () => {
       </div>
       {/* Text Section */}
       <div className="w-2/3 pl-4">
-        <h3 className="text-sm font-medium text-gray-700">{name}</h3>
-        <p className="mt-2 text-blue-600 font-semibold">
+        <h3 className="text-[17.82px] font-[400] font-publicSans leading-[25.45px] text-[#191C1F]">
+          {name}
+        </h3>
+        <p className="mt-2 text-[17.82px] text-[#2DA5F3] font-semibold font-publicSans">
           {"\u20B9"}
           {price}
         </p>
@@ -308,7 +310,7 @@ const Home = () => {
       {/* Top Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
         {/* Left Column - Slider */}
-        <div className="rounded-lg md:col-span-2 h-full flex">
+        <div className="rounded-lg md:col-span-2 h-full pt-16 md:pt-0">
           <Swiper
             pagination={{ clickable: true }}
             modules={[Pagination]}
@@ -426,7 +428,7 @@ const Home = () => {
       </div>
 
       {/* Bottom Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8 border">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8 border font-poppins p-4">
         <div className="flex items-center space-x-2 p-4 bg-white border-r">
           <img
             src="/home/icon1.png"
@@ -434,29 +436,45 @@ const Home = () => {
             className="w-10 h-10 mb-2"
           />
           <div>
-            <h4 className="text-sm font-bold">Fasted Delivery</h4>
-            <p className="text-gray-600 text-sm">Delivery in 24/H</p>
+            <h4 className="text-[#191C1F] font-[500] text-[18px] uppercase">
+              Fasted Delivery
+            </h4>
+            <p className="text-[#5F6C72] font-[400] text-[15px]">
+              Delivery in 24/H
+            </p>
           </div>
         </div>
         <div className="flex items-center space-x-2 p-4 bg-white border-r">
           <img src="/home/icon2.png" alt="Return" className="w-10 h-10 mb-2" />
           <div>
-            <h4 className="text-sm font-bold">24 Hours Return</h4>
-            <p className="text-gray-600 text-sm">100% money-back guarantee</p>
+            <h4 className="text-[#191C1F] font-[500] text-[18px] uppercase">
+              24 Hours Return
+            </h4>
+            <p className="text-[#5F6C72] font-[400] text-[15px]">
+              100% money-back guarantee
+            </p>
           </div>
         </div>
         <div className="flex items-center space-x-2 p-4 bg-white border-r">
           <img src="/home/icon3.png" alt="Payment" className="w-10 h-10 mb-2" />
           <div>
-            <h4 className="text-sm font-bold">Secure Payment</h4>
-            <p className="text-gray-600 text-sm">Your money is safe</p>
+            <h4 className="text-[#191C1F] font-[500] text-[18px] uppercase">
+              Secure Payment
+            </h4>
+            <p className="text-[#5F6C72] font-[400] text-[15px]">
+              Your money is safe
+            </p>
           </div>
         </div>
-        <div className="flex items-center space-x-2 p-4 bg-white border-r">
+        <div className="flex items-center space-x-2 p-4 bg-white ">
           <img src="/home/icon4.png" alt="Support" className="w-10 h-10 mb-2" />
           <div>
-            <h4 className="text-sm font-bold">Support 24/7</h4>
-            <p className="text-gray-600 text-sm">Live contact/message</p>
+            <h4 className="text-[#191C1F] font-[500] text-[18px] uppercase">
+              Support 24/7
+            </h4>
+            <p className="text-[#5F6C72] font-[400] text-[15px]">
+              Live contact/message
+            </p>
           </div>
         </div>
       </div>
@@ -477,13 +495,13 @@ const Home = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-5 p-6">
           {/* Left Column */}
-          <div className="bg-white p-6  border  md:col-span-1 h-full flex flex-col">
+          <div className="bg-white p-3 border  md:col-span-1 h-full flex flex-col">
             <div className="relative">
               <div className="absolute top-0 left-0 flex flex-col space-y-1">
-                <span className="bg-yellow-400 text-white text-xs font-bold px-2 py-1 rounded">
+                <span className="bg-[#EFD33D] text-[#191C1F] text-[15px] font-[600] px-2 py-1 rounded">
                   32% OFF
                 </span>
-                <span className="bg-red-500 w-[33px] text-white text-xs font-bold px-1 py-1 rounded">
+                <span className="bg-[#EE5858] text-white text-[15px] font-[600] px-1 py-1 rounded self-start">
                   HOT
                 </span>
               </div>
@@ -499,19 +517,17 @@ const Home = () => {
                 <span className="text-yellow-500">★ ★ ★ ★ ★</span>
                 <span className="text-gray-600 text-sm">(52,677)</span>
               </div>
-              <h3 className="text-lg leading-[1.2] font-publicSans font-[400]">
+              <h3 className="text-[20px] leading-[30.55px] font-publicSans text-[#191C1F] font-[400]">
                 Xbox Series S - 512GB SSD Console with Wireless Controller - EU
                 Version
               </h3>
-              <div className="flex items-center font-inter mb-3 space-x-2 mt-2">
-                <span className="text-gray-400 line-through">
+              <div className="flex items-center font-inter mb-3 text-[23px] font-[600] space-x-2 mt-2">
+                <span className="text-[#ADB7BC] text-[20px] font-[400] line-through">
                   {"\u20B9"}865.99
                 </span>
-                <span className="text-blue-500 font-bold">
-                  {"\u20B9"}442.12
-                </span>
+                <span className="text-[#2DA5F3]">{"\u20B9"}442.12</span>
               </div>
-              <p className="text-sm font-publicSans text-[#5F6C72] mb-4">
+              <p className="text-[18px] font-[400] font-publicSans text-[#5F6C72] mb-4">
                 Games built using the Xbox Series X|S development kit showcase
                 unparalleled load times, visuals.
               </p>
@@ -552,7 +568,7 @@ const Home = () => {
                 )}
                 {/* Discount */}
                 {product.discount && (
-                  <span className="z-10 absolute top-2 right-2 bg-[#EFD33D] text-xs font-bold px-2 py-1  text-white ">
+                  <span className="z-10 absolute top-2 left-2 bg-[#EFD33D] text-xs font-bold px-2 py-1  text-white ">
                     {product.discount}
                   </span>
                 )}
@@ -590,8 +606,10 @@ const Home = () => {
                 </div>
                 {/* Product Info */}
                 <div className="mt-4">
-                  <h3 className="text-sm font-bold">{product.title}</h3>
-                  <p className="text-blue-500 font-bold">
+                  <h3 className="text-[#191C1F] font-[400] text-[18px]">
+                    {product.title}
+                  </h3>
+                  <p className="text-[#2DA5F3] font-[600] text-[18px]">
                     {"\u20B9"}
                     {product.price}
                   </p>
@@ -604,7 +622,7 @@ const Home = () => {
 
       {/* shop with categories */}
       <div className="my-10  font-poppins">
-        <h2 className="text-center text-2xl font-bold mb-6">
+        <h2 className="text-center text-[#191C1F] text-[32px] font-[600] mb-6">
           Shop with Categorys
         </h2>
         <Swiper
@@ -630,7 +648,9 @@ const Home = () => {
                   alt={category.title}
                   className="w-full h-32 object-contain mb-4"
                 />
-                <h3 className="text-lg font-semibold">{category.title}</h3>
+                <h3 className="text-[#191C1F] text-[20.36px] font-[500]">
+                  {category.title}
+                </h3>
               </div>
             </SwiperSlide>
           ))}
@@ -646,31 +666,29 @@ const Home = () => {
 
       {/* fetured product */}
       <div className="mt-10">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 p-6">
+        <div className="grid grid-cols-1 md:grid-cols-7 gap-6">
           {/* Left Column */}
-          <div className="bg-[#F3DE6D] p-6 rounded-lg font-publicSans shadow-md">
+          <div className="md:col-span-2 bg-[#F3DE6D] rounded-lg font-publicSans shadow-md">
             {/* Heading */}
-            <div className="text-center">
-              <p className="text-xs text-red-600 font-bold uppercase tracking-wide">
+            <div className="text-center flex flex-col items-center p-6">
+              <p className="text-[17.89px] text-[#BE4646] font-[600] uppercase tracking-wide">
                 Computer & Accessories
               </p>
-              <h2 className="text-4xl font-bold text-gray-900 mt-2">
+              <h2 className="text-[40.89px] font-[600] text-[#191C1F] mt-2">
                 32% Discount
               </h2>
-              <p className="text-sm text-gray-700 mt-2">
+              <p className="text-[20.44px] font-[400] text-[#475156] mt-2">
                 For all electronics products
               </p>
-              <p className="text-sm flex text-gray-600 mt-2">
-                Offers end in:
-                <span className="bg-white px-1 py-1  text-[9px] leading-[1] font-medium text-gray-900 rounded">
-                  ENDS OF CHRISTMAS
-                </span>
-              </p>
+              <div className="flex items-center space-x-2 text-[#191C1F] mt-2 text-[17.89px] font-[500]">
+                <p>Offers end in:</p>
+                <p className="bg-white font-[600] rounded">ENDS OF CHRISTMAS</p>
+              </div>
             </div>
 
             {/* Call-to-Action Button */}
             <div className="text-center mt-6">
-              <button className="bg-[#FA8232] text-white py-2 px-6 rounded-lg text-sm font-medium hover:bg-orange-600">
+              <button className="bg-[#FA8232] text-white py-2 px-6 rounded-[3.83px] text-[20.44px] font-bold hover:bg-orange-600">
                 Shop Now {"\u2192"}
               </button>
             </div>
@@ -686,22 +704,22 @@ const Home = () => {
           </div>
 
           {/* Right Column */}
-          <div className=" md:col-span-4">
+          <div className=" md:col-span-5">
             <div className="flex flex-col md:flex-row justify-between items-center mb-7">
               <h2 className="md:me-10 text-[#191C1F] text-[30px] font-[600]">
                 Featured Products
               </h2>
               <div className="flex flex-col md:flex-row justify-between items-center space-x-5">
-                <div className="my-3 md:my-0 flex flex-wrap items-center space-x-4 whitespace-nowrap">
-                  <p className="text-[#191C1F] font-[600] border-b border-[#FA8232]">
+                <div className="my-3 md:my-0 flex flex-wrap items-center justify-center space-x-4 whitespace-nowrap text-[17.89px] font-[400] text-[#5F6C72]">
+                  <p className="text-[#191C1F] font-[600] border-b-4 border-[#FA8232]">
                     All Product
                   </p>
-                  <p>Smart Phone</p>
-                  <p>Laptop</p>
-                  <p>Headphone</p>
-                  <p>TV</p>
+                  <p className="cursor-pointer">Smart Phone</p>
+                  <p className="cursor-pointer">Laptop</p>
+                  <p className="cursor-pointer">Headphone</p>
+                  <p className="cursor-pointer">TV</p>
                 </div>
-                <p className="text-[#FA8232]">
+                <p className="text-[#FA8232] text-[17.89px] font-[600]">
                   Browse All Product <i className="fa-solid fa-arrow-right"></i>
                 </p>
               </div>
@@ -711,7 +729,7 @@ const Home = () => {
               {fetureItems.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-white p-4 border relative group"
+                  className="bg-white p-4 border relative group m-2 hover:shadow-[0px_10.22px_30.66px_0px_#191C1F1F]"
                 >
                   {/* Label */}
                   {product.label && (
@@ -725,7 +743,7 @@ const Home = () => {
                   )}
                   {/* Discount */}
                   {product.discount && (
-                    <span className="z-10 absolute top-2 right-2 bg-[#EFD33D] text-xs font-bold px-2 py-1  text-white">
+                    <span className="z-10 absolute top-2 left-2 bg-[#EFD33D] text-xs font-bold px-2 py-1  text-white">
                       {product.discount}
                     </span>
                   )}
@@ -794,7 +812,7 @@ const Home = () => {
 
       <div className="flex flex-col font-publicSans md:flex-row gap-6 p-4">
         {/* Apple HomePod Mini Section */}
-        <div className="flex-1 bg-gray-200 p-6 rounded-lg shadow-md flex items-center">
+        <div className="flex-1 bg-gray-200 p-6 rounded-lg shadow-md flex items-center flex-col-reverse md:flex-row">
           <div className="flex-1">
             <div className="mb-4">
               <h5 className="bg-[#2DA5F3] inline-block px-2 py-1">
@@ -823,7 +841,7 @@ const Home = () => {
         </div>
 
         {/* Xiaomi Mi 11 Ultra Section */}
-        <div className="flex-1 bg-black p-6 rounded-lg shadow-md flex items-center text-white">
+        <div className="flex-1 bg-black p-6 rounded-lg shadow-md flex flex-col-reverse md:flex-row items-center text-white">
           <div className="flex-1">
             <div className="mb-4">
               <h5 className="bg-[#EFD33D] inline-block px-2 py-1">
@@ -859,27 +877,31 @@ const Home = () => {
 
       {/* start Computer Accessories */}
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 font-poppins">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between font-poppins items-center mb-8">
-          <h1 className="text-2xl font-bold">Computer Accessories</h1>
-          <div className="flex flex-wrap space-y-3 md:space-y-0 space-x-4 text-gray-600">
-            <span className="cursor-pointer">All Product</span>
+          <h1 className="text-[#191C1F] text-[30px] font-[600]">
+            Computer Accessories
+          </h1>
+          <div className="flex flex-wrap items-center justify-center space-y-3 md:space-y-0 space-x-4 text-[17.89px] font-[400] text-[#5F6C72]">
+            <p className="text-[#191C1F] font-[600] border-b-4 border-[#FA8232]">
+              All Product
+            </p>
             <span className="cursor-pointer">Keyboard & Mouse</span>
             <span className="cursor-pointer">Headphone</span>
             <span className="cursor-pointer">Webcam</span>
             <span className="cursor-pointer">Printer</span>
-            <span className="text-orange-500 font-semibold cursor-pointer">
-              Browse All Product {"\u2192"}
-            </span>
+            <p className="text-[#FA8232] text-[17.89px] font-[600]">
+              Browse All Product <i className="fa-solid fa-arrow-right"></i>
+            </p>
           </div>
         </div>
 
         {/* Content Section */}
         {/* Content Section */}
-        <div className="flex flex-wrap lg:flex-nowrap gap-6">
+        <div className="grid md:grid-cols-12 gap-6">
           {/* Left Section: Product Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
+          <div className="md:col-span-9 self-start grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
             {Array(8)
               .fill("")
               .map((_, index) => {
@@ -917,10 +939,10 @@ const Home = () => {
                       <span
                         className={`${
                           index % 3 === 0
-                            ? "bg-blue-500"
+                            ? "bg-[#2DA5F3] text-[15.27px] font-[600] text-white"
                             : index % 3 === 1
-                            ? "bg-red-500"
-                            : "bg-green-500"
+                            ? "bg-[#EE5858] text-[15.27px] font-[600] text-white"
+                            : "bg-[#2DB224] text-[15.27px] font-[600] text-white"
                         } text-white text-xs font-semibold py-1 px-3 `}
                       >
                         {index % 3 === 0
@@ -983,40 +1005,52 @@ const Home = () => {
           </div>
 
           {/* Right Section */}
-          <div className="w-full lg:w-1/4 space-y-6">
+          <div className="md:col-span-3">
             {/* Earbuds Section */}
-            <div className="bg-yellow-100 p-6 rounded-lg shadow-md text-center">
-              <div className="w-full h-30 rounded-lg mb-4">
-                <img src="/computer/rightImage.png" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">
+            <div className="bg-[#F7E99E] p-6 rounded-[5.09px] text-center flex flex-col items-center">
+              <img src="/computer/rightImage.png" />
+              <h3 className="text-[35.64px] font-[600] text-[#191C1F] mb-2">
                 Xiaomi True Wireless Earbuds
               </h3>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-[20.36px] font-[400] text-[#475156] mb-4">
                 Escape the noise, It’s time to hear the magic with Xiaomi
                 Earbuds.
               </p>
-              <div className="text-[15px] space-x-2 font-PublicSans text-gray-800 mb-4">
+              <div className="text-[17.82px] my-5 space-x-2 font-PublicSans font-[400] text-[#475156] mb-10">
                 Only for:{" "}
-                <span className="bg-[#FFFFFF] font-[600] p-2">
+                <span className="bg-[#FFFFFF] p-2 text-[#191C1F] text-[20.36px] font-[600]">
                   {"\u20B9"}25,879
                 </span>
               </div>
-              <button className="bg-[#FA8232] text-white py-2 px-4 hover:bg-orange-600">
-                Shop Now {"\u2192"}
+              <button className="bg-[#FA8232] w-full rounded-[2.55px] text-[17.82px] font-[700] text-white py-2 px-4 hover:bg-orange-600 flex items-center justify-center space-x-2">
+                <p>Shop Now </p>
+                <img
+                  src="/home/right-arrow.png"
+                  alt="right-arrow"
+                  className="w-[25px] h-[25px]"
+                />
               </button>
             </div>
 
             {/* Discount Section */}
-            <div className="bg-[#124261] p-6 rounded-lg shadow-md text-center text-white">
-              <p className="text-[15px] bg-gray-500 px-2 mb-2">SUMMER SALES</p>
-              <p className="text-[18px] font-[600] mb-4">37% DISCOUNT</p>
-              <p className="text-sm mb-6">
+            <div className="bg-[#124261] rounded-[5.09px] py-10 shadow-md flex flex-col items-center text-center text-white mt-7 px-5">
+              <p className="text-[17.82px] font-[600] w-[174.55px] bg-[#FFFFFF1F] p-2 mb-2">
+                SUMMER SALES
+              </p>
+              <p className="text-[35.64px] font-[600] font-publicSans text-white mb-4">
+                37% DISCOUNT
+              </p>
+              <p className="text-[22.91px] font-[600] font-publicSans mb-6">
                 Only for <span className="text-[#EBC80C]">Smartphone</span>{" "}
                 product.
               </p>
-              <button className="bg-[#2DA5F3] text-white py-2 px-4  hover:bg-blue-600">
-                Shop Now {"\u2192"}
+              <button className="bg-[#2DA5F3] flex items-center justify-center space-x-1 text-white w-full text-[17.82px] font-[700] font-publicSans py-2  hover:bg-blue-600">
+                <p>Shop Now </p>
+                <img
+                  src="/home/right-arrow.png"
+                  alt="right-arrow"
+                  className="w-[25px] h-[25px]"
+                />
               </button>
             </div>
           </div>
@@ -1024,28 +1058,33 @@ const Home = () => {
       </div>
       {/* end Computer Accessories */}
       {/* Add section */}
-      <div className="bg-orange-50 flex flex-col lg:flex-row items-center justify-between px-6 py-8 lg:py-12 rounded-lg shadow-lg">
+      <div className="bg-[#FFE7D6] flex flex-col lg:flex-row items-center justify-between px-6 py-8 lg:py-12 rounded-lg">
         {/* Left Section */}
-        <div className="lg:w-1/2 text-center font-[publicSans] lg:text-left">
-          <span className="bg-[#2DA5F3] text-white text-xs font-semibold py-1 px-2 ">
+        <div className="lg:w-1/2 text-center font-publicSans lg:text-left">
+          <span className="bg-[#2DA5F3] text-white text-[16.36px] font-semibold py-1 px-2 ">
             SAVE UP TO {"\u20B9"}2000.00
           </span>
-          <h2 className="text-2xl lg:text-4xl font-bold text-[#191C1F] mt-4">
+          <h2 className="text-2xl lg:text-[56.08px] font-semibold text-[#191C1F] my-7">
             MacBook Pro
           </h2>
-          <p className="text-[#191C1F] mt-2">
+          <p className="text-[#191C1F] text-[28.04px] font-[400] mt-2">
             Apple M1 Max Chip, 32GB Unified Memory, 1TB SSD Storage
-          </p>
-          <button className="bg-[#FA8232] text-white text-sm font-medium py-2 px-4  mt-6 hover:bg-orange-600">
-            SHOP NOW {"\u2192"}
+          </p>{" "}
+          <button className="bg-[#FA8232] mt-8 rounded-[2.55px] text-[17.82px] font-[700] text-white py-2 px-4 hover:bg-orange-600 flex items-center justify-center space-x-2">
+            <p>Shop Now </p>
+            <img
+              src="/home/right-arrow.png"
+              alt="right-arrow"
+              className="w-[25px] h-[25px]"
+            />
           </button>
         </div>
 
         {/* Right Section */}
         <div className="lg:w-1/2 flex justify-center relative mt-6 lg:mt-0">
           {/* Price Badge */}
-          <div className="absolute top-10 left-12 bg-[#FFCEAD] text-[#191C1F] text-sm font-inter flex items-center justify-center h-20 w-20 rounded-full shadow-md border-4 border-white z-10">
-            {"\u20B9"}1999
+          <div className="absolute top-10 md:left-16 bg-[#FFCEAD] text-[#191C1F] text-[24px] font-[600] font-poppins flex items-center justify-center min-h-[132px] min-w-[132px] rounded-full shadow-md border-4 border-white z-10">
+            ₹1,73,018
           </div>
 
           {/* Product Image */}
@@ -1063,7 +1102,7 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories2.map((category) => (
             <div key={category.title}>
-              <h2 className="text-lg font-bold text-gray-900 mb-4">
+              <h2 className="text-[20px] font-[600] text-[#191C1F] font-poppins mb-4">
                 {category.title}
               </h2>
               <div className="grid gap-4">
@@ -1080,15 +1119,15 @@ const Home = () => {
       <div className="bg-[#1B6392] text-white py-16">
         <div className="container mx-auto px-6 text-center">
           {/* Header Text */}
-          <h2 className="text-2xl md:text-3xl font-[600] font-publicSans mb-4">
+          <h2 className="text-2xl md:text-[32px] font-[600] font-publicSans mb-4">
             Subscribe to our newsletter
           </h2>
-          <p className="text-[15px] md:text-base text-gray-200 font-[400] mb-8 max-w-[500px] mx-auto">
+          <p className="text-[16px] text-[#FFFFFF] font-[400] mb-8 max-w-[500px] mx-auto">
             Praesent fringilla erat a lacinia egestas. Donec vehicula tempor
             libero et cursus. Donec non quam urna. Quisque vitae porta ipsum.
           </p>
           {/* Subscription Form */}
-          <div className="relative max-w-xl mx-auto">
+          <div className="relative max-w-xl mx-auto rounded-[3px]">
             {/* Input Field */}
             <input
               type="email"
@@ -1096,13 +1135,13 @@ const Home = () => {
               className="w-full p-4 pr-30 text-gray-800 focus:outline-none"
             />
             {/* Subscribe Button */}
-            <button className="absolute right-2 top-2 bottom-1 bg-[#FA8232] hover:bg-orange-600 text-white px-6  font-semibold">
+            <button className="absolute right-2 top-2 bottom-2 bg-[#FA8232] hover:bg-orange-600 text-white px-6  font-semibold">
               SUBSCRIBE {"\u2192"}
             </button>
           </div>
 
           {/* Brand Logos */}
-          <div className="flex justify-center items-center gap-6 mt-8 text-gray-300">
+          <div className="flex justify-center items-center space-x-8 mt-8 text-gray-300">
             <img
               src="/newsletter/google.png"
               alt="Google"

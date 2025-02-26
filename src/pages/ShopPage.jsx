@@ -8,7 +8,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { HiHome } from "react-icons/hi";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 const Vegetables = [
   {
     id: 1,
@@ -508,26 +508,26 @@ export default function ShopPage() {
   return (
     // <div className="bg-[#C5EAD9C7] max-w-[1500px] mx-auto">
     <div>
-      <div className="flex items-center mx-auto bg-[#F2F4F5] max-w-[1400px] p-5 ps-10 text-[#5F6C72] ">
+      <div className="flex items-center bg-[#F2F4F5] p-5 ps-10 text-[#5F6C72] ">
         {/* Home */}
         <div className="flex justify-center font-poppins text-[14px] font-[400] ">
           {/* Home */}
           <p className="flex items-center">
             <img src="/home.png" alt="Home Icon" className="mr-2" />
             Home
-            <i className="fa-solid fa-greater-than mx-2"></i>
+            <i class="fa-solid fa-chevron-right mx-2"></i>
           </p>
 
           {/* Shop */}
           <p className="flex items-center">
             Shop
-            <i className="fa-solid fa-greater-than mx-2"></i>
+            <i class="fa-solid fa-chevron-right mx-2"></i>
           </p>
 
           {/* Shop Grid */}
           <p className="flex items-center">
             Shop Grid
-            <i className="fa-solid fa-greater-than mx-2"></i>
+            <i class="fa-solid fa-chevron-right mx-2"></i>
           </p>
 
           {/* Electronics Devices */}
@@ -535,12 +535,14 @@ export default function ShopPage() {
         </div>
       </div>
 
-      <div className="bg-gray-50 min-h-screen grid max-w-[1400px] grid-cols-1 mx-auto md:grid-cols-4">
+      <div className="min-h-screen grid max-w-[1400px] grid-cols-1 mx-auto md:grid-cols-4">
         {/* Left Section */}
         <div className="bg-white px-6 py-8 md:col-span-1">
           {/* Categories Section */}
           <div className="mb-8 font-poppins text-[#475156]">
-            <h4 className="text-[#191C1F] font-[500] mb-4">Category</h4>
+            <h4 className="text-[#191C1F] text-[20px] uppercase font-[500] mb-4">
+              Category
+            </h4>
             <ul className="space-y-2">
               {[
                 { name: "Electronics Devices" },
@@ -560,7 +562,13 @@ export default function ShopPage() {
                   key={index}
                   className="flex justify-between items-center text-[#475156] text-[18px]"
                 >
-                  <label className="flex items-center gap-2">
+                  <label
+                    className={`flex items-center gap-2  text-[18px] ${
+                      prod.name === category
+                        ? "text-[#191C1F] font-[500] "
+                        : "text-[#475156] font-[400] "
+                    }`}
+                  >
                     <input
                       type="radio"
                       name="category"
@@ -578,7 +586,7 @@ export default function ShopPage() {
 
           {/* Price Range Section */}
           <div className="mb-8">
-            <h4 className="text-[20px] font-[500] font-poppins mb-4 uppercase">
+            <h4 className="text-[#191C1F] text-[20px] uppercase font-[500] mb-4">
               Price Range
             </h4>
 
@@ -652,7 +660,7 @@ export default function ShopPage() {
               ].map((prod, index) => (
                 <li
                   key={index}
-                  className="flex justify-between items-center text-[#475156] text-[18px]"
+                  className="flex justify-between items-center text-[#475156] text-[18.49px] font-[400] font-publicSans"
                 >
                   <label className="flex items-center font-publicSans gap-2 ">
                     <input
@@ -671,7 +679,7 @@ export default function ShopPage() {
           </div>
           {/* popular brands */}
           <div className="my-3">
-            <h4 className="text-lg font-[500] font-poppins text-[20px] mb-4 uppercase">
+            <h4 className="text-[#191C1F] text-[20px] uppercase font-[500] mb-4">
               Popular Brands
             </h4>
             <div className="grid grid-cols-2 gap-4">
@@ -684,7 +692,7 @@ export default function ShopPage() {
                     type="checkbox"
                     checked={brands[brand]}
                     onChange={() => toggleBrand(brand)}
-                    className="w-4 h-4 accent-[#FA8232] cursor-pointer"
+                    className="w-[26px] h-[26px]  accent-[#FA8232] cursor-pointer"
                   />
                   <span className="text-[18px] font-[400] font-poppins text-[#475156]">
                     {brand}
@@ -696,7 +704,7 @@ export default function ShopPage() {
 
           {/* Popular Tag Section */}
           <div className="my-8">
-            <h4 className="text-[20px] font-[500] font-poppins mb-4 uppercase">
+            <h4 className="text-[#191C1F] text-[20px] uppercase font-[500] mb-4">
               Popular Tag
             </h4>
 
@@ -744,14 +752,14 @@ export default function ShopPage() {
           </div>
         </div>
         {/* Right Section */}
-        <div className="bg-gray-50 p-6 md:col-span-3 flex-grow">
+        <div className="md:col-span-3 flex-grow p-6">
           {/* Sort and Results */}
           <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 justify-between items-center mb-6">
-            <div className="border">
+            <div className="border md:w-[40%] flex items-center justify-between rounded-md">
               <input
                 type="text"
                 placeholder="Search for anything..."
-                className="px-4 p-2 outline-none bg-gray-50"
+                className="px-4 p-2 outline-none w-full"
               />
               <i class="fa-solid fa-magnifying-glass p-3"></i>
             </div>
@@ -769,13 +777,40 @@ export default function ShopPage() {
               </select>
             </div>
           </div>
-
+          {/* filters */}
+          <div className="bg-[#F2F4F5] p-3 flex flex-col md:flex-row space-y-3 md:space-y-0 justify-between items-center mb-6">
+            <div className="flex items-center space-x-4">
+              <p className="text-[#5F6C72] text-[17.02px] font-[400] font-poppins">
+                Active Filters:
+              </p>
+              <div className="flex space-x-6 overflow-x-auto scrollbar-hide">
+                <div className="flex items-center space-x-2">
+                  <p className="text-[#191C1F] text-[17.02px] font-[400] font-poppins">
+                    Electronics Devices
+                  </p>
+                  <i class="fa-solid fa-xmark text-[#929FA5]"></i>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <p className="text-[#191C1F] text-[17.02px] font-[400] font-poppins">
+                    Electronics Devices
+                  </p>
+                  <i class="fa-solid fa-xmark text-[#929FA5]"></i>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p className="text-[#5F6C72] text-[17.02px] font-[400] font-poppins">
+                <span className="text-[#191C1F] me-2"> 65,867</span>
+                Results found.
+              </p>
+            </div>
+          </div>
           {/* Product Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {fetureItems.map((product) => (
               <div
                 key={product.id}
-                className="bg-white p-4 border relative group"
+                className="bg-white p-4 border relative group hover:shadow-[0px_10.22px_30.66px_0px_#191C1F1F]"
               >
                 {/* Label */}
                 {product.label && (
@@ -789,7 +824,7 @@ export default function ShopPage() {
                 )}
                 {/* Discount */}
                 {product.discount && (
-                  <span className="z-10 absolute top-2 right-2 bg-[#EFD33D] text-xs font-bold px-2 py-1  text-white">
+                  <span className="z-10 absolute top-2 left-2 bg-[#EFD33D] text-xs font-bold px-2 py-1  text-white">
                     {product.discount}
                   </span>
                 )}
@@ -801,51 +836,53 @@ export default function ShopPage() {
                     className="w-full h-auto rounded"
                   />
                   {/* Hover Icons */}
-                  <div className="bg-[#00000033] absolute  inset-0 flex items-center justify-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Link to="/wish-list">
-                    <img
-                      src="/home/heart-icon.png"
-                      alt="like"
-                      className="w-2 h-2 md:w-auto md:h-auto"
-                    />
+                  <div className="bg-[#00000033] absolute inset-0 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <Link to="/wish-list">
+                      <img
+                        src="/home/heart-icon.png"
+                        alt="like"
+                        className="md:w-auto md:h-auto"
+                      />
                     </Link>
                     <Link to="/add-Cart">
-                    <img
-                      src="/home/cart-icon.png"
-                      alt="cart"
-                      className="w-4 h-4 md:w-auto md:h-auto"
-                    />
+                      <img
+                        src="/home/cart-icon.png"
+                        alt="cart"
+                        className="md:w-auto md:h-auto"
+                      />
                     </Link>
                     <Link to="/product-details">
-                    <img
-                      src="/home/view-icon.png"
-                      alt="view"
-                      className="w-4 h-4 md:w-auto md:h-auto"
-                    />
+                      <img
+                        src="/home/view-icon.png"
+                        alt="view"
+                        className="md:w-auto md:h-auto"
+                      />
                     </Link>
                   </div>
                 </div>
                 {/* Product Info */}
                 <div className="mt-4">
-                  <div className="flex space-x-1 items-center">
+                  <div className="flex space-x-[1px] items-center">
                     {product.rating > 0 &&
                       Array(product.rating)
                         .fill()
                         .map((_, index) => (
-                          <i
-                            className="fa-solid fa-star text-[#FA8232]"
+                          <img
+                            src="/home/Star.png"
+                            className="w-4 h-4 fa-star text-[#FA8232]"
                             key={index}
-                          ></i>
+                          />
                         ))}
                     {product.rating && (
-                      <p className="text-[#77878F]">({product.rating})</p>
+                      <p className="text-[#77878F] text-[12px] font-[400] font-poppins">
+                        ({product.rating})
+                      </p>
                     )}
                   </div>
-                  <h3 className="text-[#191C1F] text-[14px] font-[400] font-poppins">
+                  <h3 className="text-[#191C1F] text-[14px] font-[400] font-poppins mt-2">
                     {product.title}
                   </h3>
-                  <p className="text-[#2DA5F3] font-[600]">
-                    {" "}
+                  <p className="mt-2 text-[#2DA5F3] font-[600] text-[14px] font-publicSans">
                     {"\u20B9"}
                     {product.price}
                   </p>
